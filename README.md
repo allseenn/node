@@ -1,3 +1,1 @@
-# node
-nodejs
-test
+This repo contain scripts with exersise's answers for nodejs framework from http://nodeschool.io 
