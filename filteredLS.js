@@ -5,7 +5,7 @@ var ext = process.argv[3];
 
 fs.readdir(dir, function(err, list){
     for(var i=0;i<list.length;i++){
-        if(path.extname(list[i])==ext){
+        if(path.extname(list[i])=='.'+ext){
             console.log(list[i]);
         }
     }
