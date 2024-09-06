@@ -1,0 +1,25 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "test project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allseenn/node.git"
+  },
+  "keywords": [
+    "node.js"
+  ],
+  "author": "allseen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allseenn/node/issues"
+  },
+  "homepage": "https://github.com/allseenn/node#readme",
+  "dependencies": {
+    "uuid": "^10.0.0"
+  }
+}
