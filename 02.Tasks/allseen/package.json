@@ -1,0 +1,26 @@
+{
+  "name": "allseen",
+  "version": "0.0.3",
+  "description": "sysInfo IOT monitor sensors",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/allseen/allseen.git"
+  },
+  "keywords": [
+    "allseen",
+    "systeminfo",
+    "sensors",
+    "monitor",
+    "iot"
+  ],
+  "author": "allseen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/allseen/allseen/issues"
+  },
+  "homepage": "https://gitlab.com/allseen/allseen/-/blob/main/README.md"
+}
