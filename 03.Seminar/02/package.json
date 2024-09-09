@@ -1,0 +1,12 @@
+{
+  "name": "02",
+  "version": "1.0.0",
+  "main": "writePerson.js",
+  "scripts": {
+    "start": "node writePerson.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
