@@ -22,6 +22,7 @@ app.get('/', (req, res) => {
     res.send(`
         <h1>Корневая страница</h1>
         <p>Просмотров: ${counter.root}</p>
+        <a href="/about">Ссылка на страницу /about</a>
     `);
 });
 
@@ -31,6 +32,7 @@ app.get('/about', (req, res) => {
     res.send(`
         <h1>Страница about</h1>
         <p>Просмотров: ${counter.about}</p>
+        <a href="/">Ссылка на страницу /</a>
     `);
 });
 
