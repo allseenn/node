@@ -3,34 +3,34 @@ const path = require('path');
 const fs = require('fs');
 const app = express();
 const port = 3000;
-let counterRoot = '0';
-let counterAbout = '0';
-
-if (!fs.existsSync(path.join(__dirname, 'counterRoot'))) {
-    fs.writeFileSync(path.join(__dirname, 'counterRoot'), '0');
-}
-if (!fs.existsSync(path.join(__dirname, 'counterAbout'))) {
-    fs.writeFileSync(path.join(__dirname, 'counterAbout'), '0');
+const fileName = 'counter.log';
+let counter = {
+    root: 0,
+    about: 0
 }
 
-counterRoot = parseInt(fs.readFileSync(path.join(__dirname, 'counterRoot'), 'utf8'));
-counterAbout = parseInt(fs.readFileSync(path.join(__dirname, 'counterAbout'), 'utf8'));
+
+if (!fs.existsSync(path.join(__dirname, fileName))) {
+    fs.writeFileSync(path.join(__dirname, fileName), JSON.stringify(counter));
+}
+
+counter = JSON.parse(fs.readFileSync(path.join(__dirname, fileName)));
 
 app.get('/', (req, res) => {
-    counterRoot++;
-    fs.writeFileSync(path.join(__dirname, 'counterRoot'), counterRoot.toString()); 
+    counter.root++;
+    fs.writeFileSync(path.join(__dirname, fileName), JSON.stringify(counter)); 
     res.send(`
         <h1>Корневая страница</h1>
-        <p>Просмотров: ${counterRoot}</p>
+        <p>Просмотров: ${counter.root}</p>
     `);
 });
 
 app.get('/about', (req, res) => {
-    counterAbout++;
-    fs.writeFileSync(path.join(__dirname, 'counterAbout'), counterAbout.toString()); 
+    counter.about++;
+    fs.writeFileSync(path.join(__dirname, fileName), JSON.stringify(counter)); 
     res.send(`
         <h1>Страница about</h1>
-        <p>Просмотров: ${counterAbout}</p>
+        <p>Просмотров: ${counter.about}</p>
     `);
 });
 
