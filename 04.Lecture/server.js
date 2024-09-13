@@ -11,14 +11,30 @@ app.get('/articles', (req, res) => {
 });
 
 app.get('/articles/:id', (req, res) => {
-    const article = articles.find(article => article.id === Number(req.params.id));
-
-    if(article) {
-        res.send({article});
-    } else {
-        res.status(404);
+    const article = articles[req.params.id-1];
+    if(article)
+        res.send(articles);
+    else
         res.send({article: null});
-    }
+});
+
+app.put('/articles/:id', (req, res) => {
+    const article = articles[req.params.id-1];
+    if(article){
+        article.title = req.body.title;
+        article.content = req.body.content;
+        res.send(articles);
+    }else
+        res.send({article: null});
+});
+
+app.delete('/articles/:id', (req, res) => {
+    const article = articles[req.params.id-1];
+    if(article){
+        articles.splice(req.params.id-1, 1);
+        res.send(articles);
+    }else
+        res.send({article: null});
 });
 
 app.post('/articles', (req, res) => {
