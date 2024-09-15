@@ -1,7 +1,7 @@
 function checkParams(schema) {
     return (req, res, next) => {
         const validationResult = schema.validate(req.params);
-        if(validationResult) {
+        if(validationResult.error) {
             return res.status(400).send(validationResult.error.details);
         }
         next();
@@ -11,7 +11,7 @@ function checkParams(schema) {
 function checkBody(schema) {
     return (req, res, next) => {
         const validationResult = schema.validate(req.body);
-        if(validationResult) {
+        if(validationResult.error) {
             return res.status(400).send(validationResult.error.details);
         }
         next();
