@@ -24,7 +24,7 @@ async function read(filename) {
         const data = await fileHandle.readFile({ encoding: 'utf8' });
         array.push(...JSON.parse(data));
     } catch (error) {
-        console.error('Ошибка чтения данных в файл:', error);
+        console.error('Ошибка чтения данных из файла:', error);
     } finally {
         if (fileHandle) {
             await fileHandle.close();
